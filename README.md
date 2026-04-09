@@ -31,8 +31,57 @@ Coherent demodulation (multiply by synchronized carrier)
 
 Low-pass filter to recover message
 
+Program:
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+Am = 7.2
+fm = 418
+Ac = 14.4
+fc = 4180
+fs = 41800
+
+t = np.arange(0, 2/fm, 1/fs)
+
+# Message signal
+m = Am * np.cos(2 * np.pi * fm * t)
+
+plt.subplot(3, 1, 1)
+plt.plot(t, m)
+plt.title("Message Signal")
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
+# Carrier signal
+c = Ac * np.cos(2 * np.pi * fc * t)
+
+plt.subplot(3, 1, 2)
+plt.plot(t, c)
+plt.title("Carrier Signal")
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
+# DSB-SC Signal
+s1 = (Ac + m) * np.cos(2 * np.pi * fc * t)
+s2 = (Ac - m) * np.cos(2 * np.pi * fc * t)
+s = s1 - s2   # This simplifies to 2*m*cos(...)
+
+plt.subplot(3, 1, 3)
+plt.plot(t, s)
+plt.title("DSB-SC Signal")
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
+plt.tight_layout()
+plt.show()
+```
+
 Tabulation:
+![cd124b3f-822d-4522-9005-291dd1217b69](https://github.com/user-attachments/assets/7e5bba04-1e3c-47fe-8119-b99a2289a45b)
 
 Output:
+<img width="630" height="469" alt="574440331-94ad06af-824b-4f24-bece-eae4e6811989" src="https://github.com/user-attachments/assets/b9e56790-7d6e-4b68-9229-8b66a2a5b172" />
 
 Result:
+To generate a Double Sideband Suppressed Carrier (DSB-SC) signal in Python (Google Colab), transmit it (optionally add noise), and recover the message using coherent (synchronous) demodulation with a low-pass filter has been observed and verified
