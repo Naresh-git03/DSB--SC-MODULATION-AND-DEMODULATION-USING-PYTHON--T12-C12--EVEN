@@ -81,7 +81,8 @@ Tabulation:
 ![cd124b3f-822d-4522-9005-291dd1217b69](https://github.com/user-attachments/assets/7e5bba04-1e3c-47fe-8119-b99a2289a45b)
 
 Output:
-<img width="630" height="469" alt="574440331-94ad06af-824b-4f24-bece-eae4e6811989" src="https://github.com/user-attachments/assets/b9e56790-7d6e-4b68-9229-8b66a2a5b172" />
+ 
+ <img width="630" height="469" alt="574440331-94ad06af-824b-4f24-bece-eae4e6811989" src="https://github.com/user-attachments/assets/b9e56790-7d6e-4b68-9229-8b66a2a5b172" />
 
 Result:
 To generate a Double Sideband Suppressed Carrier (DSB-SC) signal in Python (Google Colab), transmit it (optionally add noise), and recover the message using coherent (synchronous) demodulation with a low-pass filter has been observed and verified
